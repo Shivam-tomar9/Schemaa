@@ -1,0 +1,12 @@
+<?php
+  
+   	$firstUriSegment = Request::segment(2);
+
+	// check if its in table Webscodatas
+	$checkIfUriExist = DB::table('Webscodatas')->where('page', $firstUriSegment)->first();
+	if(!empty($checkIfUriExist)){
+?>
+	<script type="text/javascript">
+		<?=$checkIfUriExist->schemaa;?>
+	</script>
+<?php } ?>
